@@ -6,20 +6,20 @@
 
 :root {
     --dark-color: #2D3436;
-    --light-color: #F0F3FF;
+    --light-color: #F7F7F7;
     --text-color: #242423;
-    --first-color: #1F3A93;
-    --second-color: #4AA6C0;
-    --third-color: #7FB3D5;
+    --first-color: #FF6B6B;
+    --second-color: #4ECDC4;
+    --third-color: #45B7D1;
     --background-image: radial-gradient(#E0E0E0 1px, transparent 1px);
     --background-size: 20px 20px;
 }
 
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: cursive;
+    background-color: #F5F5F5;
     background-image: var(--background-image);
     background-size: var(--background-size);
-    letter-spacing: 1px;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -27,7 +27,8 @@ body {
 }
 
 html body {
-    height: 100%;
+    height: 100vh;
+    /* overflow-x: hidden; */
 }
 
 header {
@@ -89,29 +90,40 @@ main {
 
 .hero {
     padding-top: 0;
+    /* height: calc(100vh - 70px); */
+    background-color: #F5F5F5;
     /* padding-left: 10px;
     padding-right: 10px; */
 }
 
+.hero-text {
+    padding-right: 10px;
+}
+
 .hero-container {
-    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     text-align: center;
-    padding-top: 60px;
+    padding: 5rem;
+    /* padding-top: 100px;
     padding-bottom: 60px;
     padding-left: 50px;
-    padding-right: 50px;
+    padding-right: 50px; */
     line-height: 2rem;
-    height: 75vh;
 }
 
-.hero-container h2 {
+.hero-text h2 {
     font-size: 3.125rem;
     padding-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: 1px;
 }
 
-.hero-container p {
+.hero-text p {
     font-size: 1.25rem;
     padding-top: 20px;
+    text-wrap: wrap;
 }
 
 .button-container {
@@ -145,22 +157,13 @@ main {
     background-image: linear-gradient(to right, var(--first-color), var(--third-color));
 }
 
-.profile-image-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin: -100px 0 2rem;
-    z-index: 2;
-}
-
 img {
-    width: 30vw;
+    width: 25vw;
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid white;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-    position: relative;
     background: white;
 }
 
@@ -190,7 +193,66 @@ footer h2 {
     color: var(--second-color);
 }
 
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 1rem;
+}
+
+.about-me-section {
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.highlight {
+    color: var(--first-color);
+}
+
+.about-me-content {
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.intro-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.intro-box-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.about-me-box {
+    padding: 2rem;
+    border-radius: 10px;
+    /* border: solid; */
+    box-shadow: 5px 5px gainsboro;
+}
+
+.intro {
+    text-align: center;
+}
+
 @media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+    }
+
     .hamburger {
         display: flex;
     }
